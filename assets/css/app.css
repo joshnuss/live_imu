@@ -2,3 +2,16 @@
 
 @import "./phoenix.css";
 @import "../../deps/phoenix_live_view/assets/css/live_view.css";
+
+body {
+  overflow: hidden
+}
+
+#line {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -20;
+  left: 0;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}

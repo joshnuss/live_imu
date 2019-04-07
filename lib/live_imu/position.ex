@@ -2,7 +2,7 @@ defmodule Live.IMU.Position do
   use GenServer
 
   def start_link(_opts) do
-    GenServer.start_link(__MODULE__, {0,0,0}, name: __MODULE__)
+    GenServer.start_link(__MODULE__, {0, 0, 0}, name: __MODULE__)
   end
 
   def init(arg) do
@@ -15,7 +15,7 @@ defmodule Live.IMU.Position do
     {:reply, position, position}
   end
 
-  def handle_info(position={_x, _y, _z}, _old) do
+  def handle_info(position = {_x, _y, _z}, _old) do
     {:noreply, position}
   end
 

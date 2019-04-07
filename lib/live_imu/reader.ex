@@ -2,7 +2,7 @@ defmodule Live.IMU.Reader do
   alias Circuits.UART
 
   @path "/dev/ttyUSB0"
-  @speed 115200
+  @speed 115_200
 
   def child_spec(opts) do
     %{
@@ -12,11 +12,12 @@ defmodule Live.IMU.Reader do
   end
 
   def run(_) do
-    pid = spawn_link fn ->
-      setup()
+    pid =
+      spawn_link(fn ->
+        setup()
 
-      loop()
-    end
+        loop()
+      end)
 
     {:ok, pid}
   end
@@ -31,19 +32,22 @@ defmodule Live.IMU.Reader do
     receive do
       {:circuits_uart, _path, response} ->
         parse(response)
-      t -> IO.inspect(t)
+
+      t ->
+        IO.inspect(t)
     end
 
     loop()
   end
 
   defp parse("!ANG:" <> text) do
-    position = text
-    |> String.trim()
-    |> String.split(",")
-    |> Enum.map(&Float.parse/1)
-    |> Enum.map(fn {n, _} -> n end)
-    |> List.to_tuple()
+    position =
+      text
+      |> String.trim()
+      |> String.split(",")
+      |> Enum.map(&Float.parse/1)
+      |> Enum.map(fn {n, _} -> n end)
+      |> List.to_tuple()
 
     Phoenix.PubSub.broadcast(Live.IMU.PubSub, "imu:position", position)
   end

@@ -1,8 +1,6 @@
 defmodule Live.IMUWeb.DisplayLive do
   use Phoenix.LiveView
 
-  import :math, only: [ cos: 1, sin: 1 ]
-
   def render(assigns) do
     {roll, pitch, yaw} = assigns.position
 
@@ -25,7 +23,7 @@ defmodule Live.IMUWeb.DisplayLive do
     {:ok, put_position(socket)}
   end
 
-  def handle_info(position={_, _, _}, socket) do
+  def handle_info(position = {_, _, _}, socket) do
     {:noreply, put_position(socket, position)}
   end
 
@@ -33,7 +31,7 @@ defmodule Live.IMUWeb.DisplayLive do
     {:noreply, socket}
   end
 
-  defp put_position(socket, position \\ {0,0,0}) do
+  defp put_position(socket, position \\ {0, 0, 0}) do
     assign(socket, position: position)
   end
 end

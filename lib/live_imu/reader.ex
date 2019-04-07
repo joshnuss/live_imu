@@ -3,9 +3,15 @@ defmodule Live.IMU.Reader do
 
   @path "/dev/ttyUSB0"
   @speed 115200
-  @wait 500
 
-  def run() do
+  def child_spec(opts) do
+    %{
+      id: Live.IMU.Reader,
+      start: {Live.IMU.Reader, :run, [opts]}
+    }
+  end
+
+  def run(_) do
     pid = spawn_link fn ->
       setup()
 

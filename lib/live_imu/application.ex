@@ -9,10 +9,7 @@ defmodule Live.IMU.Application do
     # List all child processes to be supervised
     children = [
       Live.IMUWeb.Endpoint,
-     %{
-        id: Live.IMU.Reader,
-        start: {Live.IMU.Reader, :run, []}
-     },
+      Live.IMU.Reader,
       Live.IMU.Position
     ]
 

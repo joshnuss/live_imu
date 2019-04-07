@@ -19,6 +19,8 @@ defmodule Live.IMUWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    live "/imu", DisplayLive
   end
 
   # Other scopes may use custom stacks.

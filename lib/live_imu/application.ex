@@ -12,8 +12,8 @@ defmodule Live.IMU.Application do
      %{
         id: Live.IMU.Reader,
         start: {Live.IMU.Reader, :run, []}
-      }
-
+     },
+      Live.IMU.Position
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

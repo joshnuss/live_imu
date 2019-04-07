@@ -2,9 +2,11 @@
 
 Demo of Phoenix LiveView with a Pololu 10DOF IMU and an ESP32 dev board.
 
-[Pololu IMU](https://www.pololu.com/product/2739/pictures)
-[Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view)
-[ESP32 Devkit](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-devkitc.html)
+- [Pololu IMU](https://www.pololu.com/product/2739/pictures)
+- [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view)
+- [ESP32 Devkit](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-devkitc.html)
+
+![Circuit](https://github.com/joshnuss/live_imu/raw/master/circuit.jpg)
 
 # Development
 

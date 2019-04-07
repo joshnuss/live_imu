@@ -39,11 +39,11 @@ defmodule Live.IMUWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Phoenix.LiveView, only: [live_render: 2, live_render: 3]
-
       import Live.IMUWeb.ErrorHelpers
       import Live.IMUWeb.Gettext
       alias Live.IMUWeb.Router.Helpers, as: Routes
+
+      import Phoenix.LiveView, only: [live_render: 2, live_render: 3]
     end
   end
 

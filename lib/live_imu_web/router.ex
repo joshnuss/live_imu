@@ -8,6 +8,7 @@ defmodule Live.IMUWeb.Router do
     plug Phoenix.LiveView.Flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :put_layout, {Live.IMUWeb.LayoutView, :app}
   end
 
   pipeline :api do

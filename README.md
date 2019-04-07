@@ -1,7 +1,7 @@
 # Live.IMU
 
 
-Demo of [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view) a 10DOF IMU and an ESP32 dev board.
+Demo of [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view) moving IMU data around. Uses an ESP32 dev board to acquire and clean the data from the sensor and transfer it via USB.
 
 ## Parts
 

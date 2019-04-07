@@ -15,7 +15,10 @@ config :live_imu, Live.IMUWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "Rvsc0wbrg2JnfsheQATtimAk8XGkafbnXn5N/W1FkfB88gXuzt2UW5efFzeXmjvr",
   render_errors: [view: Live.IMUWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Live.IMU.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Live.IMU.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "3Fx2WlOZJeLS66p6XOxIaoR+iXSrdCbR"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,

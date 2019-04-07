@@ -8,10 +8,12 @@ defmodule Live.IMU.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      # Start the endpoint when the application starts
-      Live.IMUWeb.Endpoint
-      # Starts a worker by calling: Live.IMU.Worker.start_link(arg)
-      # {Live.IMU.Worker, arg},
+      Live.IMUWeb.Endpoint,
+     %{
+        id: Live.IMU.Reader,
+        start: {Live.IMU.Reader, :run, []}
+      }
+
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
